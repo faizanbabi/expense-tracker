@@ -182,9 +182,10 @@
     btn.innerHTML = '<span class="spinner"></span>Saving...';
 
     const params = new URLSearchParams({
-      date: today(), amount, description, category,
-      paidBy, splitType, paymentMode, notes
-    });
+  date: today(), amount, description, category,
+  paidBy, splitType, paymentMode, notes,
+  txId: Date.now() + Math.random().toString(36).slice(2)
+});
 
     const fullUrl = `${SCRIPT_URL}?${params.toString()}`;
 
